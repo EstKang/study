@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+// 레이아웃
+.wrap {
+    width: 100%;
+    height: 100vh;
+    background: url('../img/background.png') no-repeat;
+    background-size: cover;
+}
+
+
+// 버튼
+.btn {
+    width: 50px;
+    height: 50px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    background: #ffe493;
+    cursor: pointer;
+    i {
+        font-size: 30px;
+    }
+}
+
+// 상단 스코어 고정영역
+.board {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.timer {
+    width: 100px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    background-color: #fff;
+    font-size: 30px;
+    line-height: 43px;
+    font-weight: bold;
+    text-align: center;
+}
+.num_count {
+    width: 50px;
+    height: 50px;
+    border: 3px solid #000;
+    border-radius: 50%;
+    background-color: aquamarine;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 48px;
+    letter-spacing: -2px;
+}
+// 하단 그라운드 영역
+.ground {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+}
+.target {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-image: url('../img/carrot.png');
+    cursor: pointer;
+}
+.trap {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-image: url('../img/bug.png');
+    cursor: pointer;
+}
+
+// 팝업
+.popup {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 360px;
+    height: 220px;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    border-radius: 20px;
+    transform: translate(-50%);
+    &.on {
+        display: flex;
+    }
+    &_text {
+        margin-bottom: 20px;
+        font-size: 50px;
+        font-weight: bold;
+        color: #fff;
+    }
+}

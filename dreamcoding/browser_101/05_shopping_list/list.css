@@ -1,0 +1,112 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+.blind {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+.wrap {
+    margin: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+    height: 600px;
+    background: linear-gradient(#e66465, #9198e5);
+}
+.title {
+    font-size: 24px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 10px;
+}
+.section_list {
+    flex: 1;
+    overflow: auto;
+}
+.section_input {
+    display: flex;
+    background: #fff;
+    border-radius: 25px;
+    border: 2px solid #e66465;
+}
+
+.input_add_list {
+    flex: 1;
+    height: 42px;
+    padding: 0 10px;
+    border: none;
+    background-color: transparent;
+}
+.btn_add_list {
+    position: relative;
+    background-color: #e66465;
+    border: none;
+    border-radius: 100%;
+    width: 38px;
+    height: 38px;
+    margin: 2px;
+    cursor: pointer;
+}
+.btn_add_list::before,
+.btn_add_list::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    background-color: #fff;
+}
+.btn_add_list::before {
+    width: 2px;
+    height: 20px;
+}
+.btn_add_list::after {
+    width: 20px;
+    height: 2px;
+}
+.shop_list {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    background: rgba(255,255,255,0.6);
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.btn_delete_list {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin-left: auto;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+.btn_delete_list::before,
+.btn_delete_list::after {
+    content: '';
+    position: absolute;
+    display: block;
+    background-color: #000;
+}
+.btn_delete_list::before {
+    width: 2px;
+    height: 16px;
+    transform: rotate(-45deg);
+    top: 3px;
+    left: 9px;
+}
+.btn_delete_list::after {
+    width: 16px;
+    height: 2px;
+    transform: rotate(-45deg);
+    top: 10px;
+    left: 2px;
+}
