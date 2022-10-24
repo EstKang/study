@@ -5,8 +5,9 @@ const TARGET_SIZE = 80;
 const TARGET_COUNT = 5;
 const TRAP_COUNT = 5;
 const TIME = 10;
-const POPUP_TEXT_WIN = 'You Won';
-const POPUP_TEXT_LOSE = 'You Lose';
+const POPUP_TEXT_WIN = `You Won`;
+const POPUP_TEXT_LOSE = `You Lose,
+                        Replay?`;
 
 const field = document.querySelector('.ground');
 const fieldRect = field.getBoundingClientRect();
@@ -27,21 +28,23 @@ function startGame() {
 
 // game stop
 function stopGame() {
-    initGame();
     stopTimeCountDown();
-    showStartBtn();
+    showPopup(`Replay?`);
+    hideStopBtn();
 }
 
 // game lose
 function loseGame() {
     stopTimeCountDown();
     showPopup(POPUP_TEXT_LOSE);
+    hideStopBtn();
 }
 
 // game win
 function winGame() {
     stopTimeCountDown()
     showPopup(POPUP_TEXT_WIN);
+    hideStopBtn();
 }
 
 // init
@@ -54,13 +57,16 @@ function initGame() {
 
     addTarget('target', TARGET_COUNT);
     addTarget('trap', TRAP_COUNT);
+    settingDefualt();
+}
 
+function settingDefualt() {
     remainingScore = TARGET_COUNT;
     score.textContent = remainingScore;
     maxNum = TIME;
     timer.textContent = maxNum;
-    
 }
+
 function addTarget(className, count) {
     const maxWidth = fieldRect.width - TARGET_SIZE;
     const maxHeight = fieldRect.height - TARGET_SIZE;
@@ -129,6 +135,9 @@ function showStartBtn() {
     stopBtn.style.display = "none";
     startBtn.style.display = "block";
 }
+function hideStopBtn() {
+    stopBtn.style.display = "none";
+}
 
 // popup
 function showPopup(popupText) {
@@ -140,6 +149,9 @@ function hiddenPopup() {
 }
 
 // add event
+window.onload = function(){
+    settingDefualt();
+}
 startBtn.addEventListener('click', startGame);
 restartBtn.addEventListener('click', startGame);
 restartBtn.addEventListener('click', hiddenPopup);
