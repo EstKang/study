@@ -98,8 +98,9 @@
   display: flex;
 }
 .popup_text {
-  margin-bottom: 20px;
   font-size: 50px;
+  line-height: 52px;
   font-weight: bold;
   color: #fff;
+  text-align: center;
 }/*# sourceMappingURL=index.css.map */
